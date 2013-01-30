@@ -25,7 +25,7 @@ if __name__ == '__main__':
         if not os.path.isdir(settings.DOWNLOAD_DIR):
             os.makedirs(settings.DOWNLOAD_DIR)
         path = "%s/%%(id)s.%%(ext)s" % settings.DOWNLOAD_DIR
-        args=["../../../youtube-dl.py","-qwc","--write-info-json","-o",path]
+        args=[os.path.join(os.environ['OPENSHIFT_REPO_DIR'],"youtube-dl.py"),"-qwc","--write-info-json","-o",path]
         args.extend(links)
         call(args)
         os.remove(LOCK_FILE)
