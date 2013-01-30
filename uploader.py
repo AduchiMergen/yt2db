@@ -6,7 +6,7 @@ import json
 
 from dropbox import client, rest, session
 
-import settings
+from wsgi import settings
 
 LOCK_FILE="/tmp/uploader.lock"
 

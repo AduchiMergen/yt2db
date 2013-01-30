@@ -5,7 +5,7 @@ import glob
 import json
 from subprocess import call
 
-import settings
+from wsgi import settings
 
 LOCK_FILE="/tmp/downloader.lock"
 
