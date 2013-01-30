@@ -6,5 +6,5 @@ setup(name='YT2DB',
       author='AduchiMergen',
       author_email='aduchimergen@gmail.com',
       url='http://www.python.org/sigs/distutils-sig/',
-      install_requires=['Flask>=0.9'],
+      install_requires=['Flask'],
      )
