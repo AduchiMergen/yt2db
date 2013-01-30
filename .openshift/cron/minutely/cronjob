@@ -1,0 +1,3 @@
+#!/bin/bash
+nohup $OPENSHIFT_REPO_DIR/downloader.py > $OPENSHIFT_LOG_DIR/downloader 2>&1 &
+nohup $OPENSHIFT_REPO_DIR/uploader.py > $OPENSHIFT_LOG_DIR/downloader 2>&1 &
