@@ -1,5 +1,4 @@
-jobs
-settings_local.py
-video
+.project
 *.pyc
-*.lock
+*.pyo
+*~
