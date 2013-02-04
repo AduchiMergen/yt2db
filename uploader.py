@@ -56,4 +56,6 @@ if __name__ == '__main__':
                 job = json_from_file(job_file)
                 upload_file(file[1],job.get("access_token_key"),job.get("access_token_secret"))
                 os.remove(job_file)
+            os.remove(file)
+            os.remove(file+".info.json")
         os.remove(LOCK_FILE)
