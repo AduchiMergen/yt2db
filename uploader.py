@@ -59,7 +59,7 @@ if __name__ == '__main__':
         logging.info("Found %d file for upload" % len(downloded_files))
         for file in downloded_files:
             jobs_files = glob.glob(os.path.join(settings.JOB_DIR, '*_%s.job' % file[0]))
-            logging.info("Upload `%s` for %d jobs" %(file[0],len(jobs_files))
+            logging.info("Upload `%s` for %d jobs" %(file[0],len(jobs_files)))
             for job_file in jobs_files:
                 job = json_from_file(job_file)
                 upload_file(file[1],job.get("access_token_key"),job.get("access_token_secret"))
