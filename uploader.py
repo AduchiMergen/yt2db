@@ -51,7 +51,7 @@ if __name__ == '__main__':
             f = open(LOCK_FILE, "w")
         except IOError,e:
             logging.error("Failed create lock file")
-            return
+            os._exit(1)
         # jobs_files = glob.glob(os.path.join(settings.JOB_DIR, '*.job'))
         json_files = glob.glob(os.path.join(settings.DOWNLOAD_DIR, '*.json'))
         filenames = [ get_filename_from_downloaded_json(json_from_file(file)) for file in json_files]
