@@ -22,9 +22,10 @@ def upload_file(file_name,key,secret):
     size=os.path.getsize(file_name)
     uploader = myclient.get_chunked_uploader(bigFile, size)
     while uploader.offset < size:
-       try:
+        logging.info("Send %dB of %dB"%(uploader.offset,size))
+        try:
             upload = uploader.upload_chunked()
-       except rest.ErrorResponse, e:
+        except rest.ErrorResponse, e:
             # perform error handling and retry logic
             logging.error("Error upload file: %d %s" % (e.errno, e.strerror))
             pass
