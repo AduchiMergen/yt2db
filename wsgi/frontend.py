@@ -47,7 +47,7 @@ def db_callback():
 @app.route('/add_url', methods=['POST'])
 def add_url():
     if request.method == 'POST' and 'link' in request.form:
-        id = re.match("^http?.://www.youtube.com/watch\?v=(?P<id>[a-zA-Z0-9-]*)$",request.form['link'])
+        id = re.match("^http?.://www.youtube.com/watch\?v=(?P<id>[a-zA-Z0-9-_]*)$",request.form['link'])
         if id:
             if not os.path.isdir(settings.JOB_DIR):
                 os.makedirs(settings.JOB_DIR)
